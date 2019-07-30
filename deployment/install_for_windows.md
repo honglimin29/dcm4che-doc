@@ -1,4 +1,4 @@
-# Window安装步骤
+## Window环境安装
 
 ##### 安装工具版本：
 - Java SE8 ：直接exe文件安装
