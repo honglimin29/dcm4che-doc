@@ -1,17 +1,19 @@
 ## Window环境安装
 
-##### 安装工具版本：
-- Java SE8 ：直接exe文件安装
-- Wildfly 16：https://wildfly.org/downloads/
-- OpenLDAPforwindows 2.4.40：https://www.userbooster.de/en/download/openldap-for-windows.aspx
-- Apache Directory Studio 2.0.0-M9 ：http://directory.apache.org/apacheds/download/download-windows.html
-- Mysql 5.7
-- dcm4chee-arc-5.17.0-mysql：https://sourceforge.net/projects/dcm4che/files/dcm4chee-arc-light5/
+基于Window本地环境部署dcm4chee
 
-##### 安装配置
+#### 安装工具版本：
+- Java SE8 ：[直接exe文件下载安装](https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html)
+- Wildfly 16：[https://wildfly.org/downloads/](https://wildfly.org/downloads/)
+- OpenLDAPforwindows 2.4.40：[https://www.userbooster.de/en/download/openldap-for-windows.aspx](https://www.userbooster.de/en/download/openldap-for-windows.aspx)
+- Apache Directory Studio 2.0.0-M9 ：[http://directory.apache.org/apacheds/download/download-windows.html](http://directory.apache.org/apacheds/download/download-windows.html)
+- Mysql 5.7 ：[https://www.mysql.com/downloads/](https://www.mysql.com/downloads/)
+- dcm4chee-arc-5.17.0-mysql：[https://sourceforge.net/projects/dcm4che/files/dcm4chee-arc-light5/](https://sourceforge.net/projects/dcm4che/files/dcm4chee-arc-light5/)
+
+#### 安装配置
 - 解压dcm4chee-arc-5.17.0-mysql
 - 设置环境变量DCM4CHEE_ARC=解压文件的目录
-##### 数据库
+#### 数据库
 - 创建数据库并授权用户
 ```
 > mysql -u root -p<root-password>
@@ -24,7 +26,7 @@ mysql> quit
 mysql -u pacsdb -ppacsdb pacsdb < $DCM4CHEE_ARC/sql/create-mysql.sql
 ```
 
-##### openLDAP
+#### openLDAP
 - 安装openLDAPforwindows :http://www.userbooster.de/en/support/feature-articles/openldap-for-windows-installation.aspx 
 - 将LDAP模式的文件导入到OpenLDAP中
 ```
@@ -41,7 +43,7 @@ suffix          "dc=dcm4che,dc=org"
 rootdn          "cn=admin,dc=dcm4che,dc=org"
 rootpw          secret
 ```
-##### Apache Directory Studio
+#### Apache Directory Studio
 - 安装：exe文件一直下一步
 - 创建新的LDAP连接： 菜单 LDSP --> NEW Connection  参数：
 ```
@@ -119,7 +121,7 @@ dicomAssociationInitiator: TRUE
 dicomAssociationAcceptor: TRUE
  ```
  
- ##### Wildfly
+ #### Wildfly
 - 安装 ：直接解压。设：环境变量WILDFLY_HOME为wildfly根目录
 - 拷贝配置文件到WildFly安装路径中
  ```
